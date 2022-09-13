@@ -2,13 +2,13 @@ import "../components/App.css"
 import Profile from "./Profile/Profile";
 import user from "../components/data/user.json";
 import Statistics from "./Statistics/Statistics";
-import Section from "./Section/Section";
 import FriendListItem from "./FriendListItem/FriendListItem";
 import FriendList from "./FriendList/FriendList";
 import TransactionHistory from "./TransactionHistory/TransactionHistory";
 import transactions from "../components/data/transactions.json"
 import data from "../components/data/data.json"
 import friends from "../components/data/friends.json"
+
 
 export const App = () => {
   return (
@@ -20,9 +20,7 @@ export const App = () => {
         avatar={user.avatar}
         stats={user.stats}
       />
-      <Section title="Upload stats">
-        <Statistics data={data}/>
-      </Section>
+      <Statistics title="Upload stats" stats={data}/>
       <FriendList>
         <FriendListItem friends={friends} />
       </FriendList>
