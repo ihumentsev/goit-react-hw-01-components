@@ -1,0 +1,33 @@
+.profile {
+    width: 200px;
+    height: 300px;
+    background-color: aliceblue;
+    border-radius: 5%;
+    padding: 0;
+    overflow: hidden;
+}
+.description {
+    text-align: center;
+}
+.avatar {
+    width: 50%;
+    border-radius:  50%;
+    border: solid 2px;
+}
+.stats {
+    display: flex;
+    background-color: bisque;
+   padding: 0 ;
+}
+.stats li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: solid 1px;
+    width: 100%;
+    margin: 0 auto;
+}
+.name {
+    font-weight: bold;
+}

@@ -1,0 +1,22 @@
+table,
+th,
+td {
+    border: 1px solid;
+}
+table {
+    width: 500px;
+}
+th {
+    height: 70px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: coral;
+}
+th {
+    background-color: #04AA6D;
+    color: white;
+}
