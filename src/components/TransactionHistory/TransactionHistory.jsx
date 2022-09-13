@@ -1,7 +1,9 @@
-export default function TransactionHistory(items) {
-    console.log(items);
+import css from '../TransactionHistory/TransactionHistory.module.css'
+import PropTypes from 'prop-types';
+
+export default function TransactionHistory({ items }) {
     return (
-<table class="transaction-history">
+<table className={css.transaction}>
   <thead>
     <tr>
       <th>Type</th>
@@ -10,20 +12,27 @@ export default function TransactionHistory(items) {
     </tr>
   </thead>
 
-  
-    {/* {items.map((item) => {
-        return (
-                <tbody>
-                <tr key={item.id}>
-      <td>{item.type}</td>
-      <td>{item.amount}</td>
-      <td>{item.currency}</td>
-                </tr>
-                </tbody>
-            );
-        })} */}
-    
+  <tbody>
+   {items.map(({ id, type, amount, currency }) => (
+    <tr key={id}>
+      <td>{type}</td>
+      <td>{amount}</td>
+      <td>{currency}</td>
+    </tr>
+        ))}
+    </tbody>
   
 </table>
     );
+}
+
+TransactionHistory.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.exact({
+    id: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    amount: PropTypes.string.isRequired,
+    currency: PropTypes.string.isRequired,
+  })
+  )
 }

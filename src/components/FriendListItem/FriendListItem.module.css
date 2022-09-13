@@ -1,0 +1,17 @@
+
+.item {
+    display: flex;
+    width: 200px;
+    background-color: aqua;
+    border-radius: 5%;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;
+    
+    
+    
+}
+.status {
+    font-size: 100%;
+    
+}

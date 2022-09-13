@@ -1,14 +1,18 @@
+import "../components/App.css"
 import Profile from "./Profile/Profile";
-import user from "../user.json";
+import user from "../components/data/user.json";
 import Statistics from "./Statistics/Statistics";
 import Section from "./Section/Section";
 import FriendListItem from "./FriendListItem/FriendListItem";
 import FriendList from "./FriendList/FriendList";
 import TransactionHistory from "./TransactionHistory/TransactionHistory";
-import transactions from "../transactions.json"
+import transactions from "../components/data/transactions.json"
+import data from "../components/data/data.json"
+import friends from "../components/data/friends.json"
+
 export const App = () => {
   return (
-    <div>
+    <div className="container">
       <Profile
         username={user.username}
         tag={user.tag}
@@ -17,10 +21,10 @@ export const App = () => {
         stats={user.stats}
       />
       <Section title="Upload stats">
-        <Statistics/>
+        <Statistics data={data}/>
       </Section>
       <FriendList>
-        <FriendListItem/>
+        <FriendListItem friends={friends} />
       </FriendList>
       <TransactionHistory items={transactions}/>
       

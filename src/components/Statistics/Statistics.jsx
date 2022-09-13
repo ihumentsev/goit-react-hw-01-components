@@ -1,17 +1,30 @@
-import data from "../../data.json"
 
-export default function Statistics() {
+import css from "../Statistics/Statistics.module.css"
+import PropTypes from 'prop-types';
+
+export default function Statistics({data}) {
     return (
-        <ul className="stat-list">
-            {data.map((item) => {
+        <ul className={css.list}>
+            {data.map(({id, label, percentage}) => {
                 return (
-                    <li className="item" key={item.id}>
-                        <span className="label">{item.label}</span>
-                        <span className="percentage">{item.percentage}%</span>
+                    <li className={css.item} key={id}>
+                        <span className={css.label}>{label}</span>
+                        <span className={css.percentage}>{percentage}%</span>
                     </li>
                 );
             })}
             
         </ul>
     );
+}
+
+Statistics.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.exact({
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
+    
+  })
+  )
 }

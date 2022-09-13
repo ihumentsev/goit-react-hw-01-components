@@ -1,0 +1,23 @@
+.list {
+    display: flex;
+    padding: 0;
+    gap: 5px;
+    flex-wrap: wrap;
+    
+}
+.list .item {
+    display: inline-flex;
+    flex-direction: column;
+    list-style: none;
+    background-color: azure;
+    border-radius: 5px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.label {
+    font-size: 25px;
+}

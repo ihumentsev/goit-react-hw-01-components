@@ -1,7 +1,9 @@
-export default function Section({children, title}) {
+import css from "../Section/Section.module.css"
+export default function Section({ children, title }) {
+    
     return (
-<section className="statistics">
-            {title && <h2 className="title">{title}</h2>}
+<section className={css.section}>
+            {title && <h2 className={css.title}>{title}</h2>}
             {children}
 </section>
     );
